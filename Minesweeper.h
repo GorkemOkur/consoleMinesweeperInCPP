@@ -1,8 +1,6 @@
 #ifndef MINESWEEPER_H
 #define MINESWEEPER_H
 
-#include "board.cpp"
-
 class Minesweeper{
 
     private:

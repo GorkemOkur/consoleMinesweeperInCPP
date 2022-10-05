@@ -1,9 +1,6 @@
 #include<iostream>
-#include <cmath>
-#include <cstdlib>
-#include <ctime>
-
-
+#include<ios> //used to get stream size
+#include<limits> //used to get numeric limits
 #include "Minesweeper.h"
 
 using namespace std;
@@ -25,14 +22,24 @@ int main(){
     game1.printHiddenBoard();
 
     int con = 0;
-    int r, c;
+    int r=-999, c=-999;
 
     while (con != -1){    
 
-        cout<<"Please, enter the row: ";cin>>r;
-        cout<<"Please, enter the col: ";cin>>c;
+        cout<<"Please, enter the row: ";
+        cin>>r;
+        
 
+        cout<<"Please, enter the col: ";
+        cin>>c;
+
+       
         con = game1.makeAMove(r,c);
+        
+            
+
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); //clear buffer before taking new line
 
         cout<<endl;
 

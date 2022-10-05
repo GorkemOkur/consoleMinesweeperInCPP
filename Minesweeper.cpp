@@ -1,7 +1,11 @@
 #include "Minesweeper.h"
-//#include <stdlib.h>     /* srand, rand */
-//#include <time.h>       /* time */
 #include <cstring>
+#include <cmath>
+#include <cstdlib>
+#include <ctime>
+#include <iostream>
+
+using namespace std;
 
 Minesweeper::Minesweeper(int row, int col){
     
@@ -45,19 +49,19 @@ void Minesweeper::printBoard(){
                     cout<<"\33[37m"<< ( j && j != col ? " " : "" ) <<"- ";
 
                 else if( board[i][j] == '*' )
-                    cout<<"\33[101m\e[01m"<< ( j && j != col ? " " : "" ) <<board[i][j]<<" "<<"\e[0m";
+                    cout<<"\33[101m\e[01m"<< ( j && j != col ? " " : "" ) <<board[i][j]<<" "<<"\e[0m\33[0m";
 
                 else if( board[i][j] == '1' )
-                    cout<<"\33[34m\e[01m"<< ( j && j != col ? " " : "" ) <<board[i][j]<<" "<<"\e[0m";
+                    cout<<"\33[34m\e[01m"<< ( j && j != col ? " " : "" ) <<board[i][j]<<" "<<"\e[0m\33[0m";
 
                 else if( board[i][j] == '2' )
-                    cout<<"\33[32m\e[01m"<< ( j && j != col ? " " : "" ) <<board[i][j]<<" "<<"\e[0m";
+                    cout<<"\33[32m\e[01m"<< ( j && j != col ? " " : "" ) <<board[i][j]<<" "<<"\e[0m\33[0m";
 
                 else if( board[i][j] == '3' )
-                    cout<<"\33[31m\e[01m"<< ( j && j != col ? " " : "" ) <<board[i][j]<<" "<<"\e[0m";
+                    cout<<"\33[31m\e[01m"<< ( j && j != col ? " " : "" ) <<board[i][j]<<" "<<"\e[0m\33[0m";
 
                 else
-                    cout<<"\33[35m\e[01m"<< ( j && j != col ? " " : "" ) <<board[i][j]<<" "<<"\e[0m";
+                    cout<<"\33[35m\e[01m"<< ( j && j != col ? " " : "" ) <<board[i][j]<<" "<<"\e[0m\33[0m";
             }
             cout<<"\n";
         }
@@ -105,19 +109,19 @@ void Minesweeper::printHiddenBoard(){
                     cout<<"\33[37m"<< ( j && j != col ? " " : "" ) <<"- ";
 
                 else if( hiddenBoard[i][j] == '*' )
-                    cout<<"\33[101m\e[01m"<< ( j && j != col ? " " : "" ) <<hiddenBoard[i][j]<<" "<<"\e[0m";
+                    cout<<"\33[101m\e[01m"<< ( j && j != col ? " " : "" ) <<hiddenBoard[i][j]<<" "<<"\e[0m\33[0m";
 
                 else if( hiddenBoard[i][j] == '1' )
-                    cout<<"\33[34m\e[01m"<< ( j && j != col ? " " : "" ) <<hiddenBoard[i][j]<<" "<<"\e[0m";
+                    cout<<"\33[34m\e[01m"<< ( j && j != col ? " " : "" ) <<hiddenBoard[i][j]<<" "<<"\e[0m\33[0m";
 
                 else if( hiddenBoard[i][j] == '2' )
-                    cout<<"\33[32m\e[01m"<< ( j && j != col ? " " : "" ) <<hiddenBoard[i][j]<<" "<<"\e[0m";
+                    cout<<"\33[32m\e[01m"<< ( j && j != col ? " " : "" ) <<hiddenBoard[i][j]<<" "<<"\e[0m\33[0m";
 
                 else if( hiddenBoard[i][j] == '3' )
-                    cout<<"\33[31m\e[01m"<< ( j && j != col ? " " : "" ) <<hiddenBoard[i][j]<<" "<<"\e[0m";
+                    cout<<"\33[31m\e[01m"<< ( j && j != col ? " " : "" ) <<hiddenBoard[i][j]<<" "<<"\e[0m\33[0m";
 
                 else
-                    cout<<"\33[35m\e[01m"<< ( j && j != col ? " " : "" ) <<hiddenBoard[i][j]<<" "<<"\e[0m";
+                    cout<<"\33[35m\e[01m"<< ( j && j != col ? " " : "" ) <<hiddenBoard[i][j]<<" "<<"\e[0m\33[0m";
             }
             cout<<"\n";
         }
